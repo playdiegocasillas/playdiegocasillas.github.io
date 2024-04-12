@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Play - Diego Casillas</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="title">play.diegocasillas.org</div>
+        <div class="links">
+            <a href="https://github.com/playdiegocasillas">Github</a>
+            <!-- Add more links as needed -->
+        </div>
+    </div>
+
+    <div class="content">
+        <div id="game-container">
+            <!-- Game cards will be inserted here -->
+        </div>
+    </div>
+
+
+    <script>
+        var games = [
+            { name: 'Subway Surfers', img: './Images/subway.jpg', url: 'subway.diegocasillas.org', description: 'Some description about Game 1.' },
+            { name: 'Run 3', img: './Images/run3.jpg', url: 'run.diegocasillas.org',description: 'Some description about Game 2.' },
+            { name: '2048', img: './Images/208.jpg', url: '2048.diegocasillas.org', description: 'Some description about Game 1.' }
+            // Add more games as needed
+        ];
+
+        var gameContainer = document.getElementById('game-container');
+
+        games.forEach(function(game) {
+            var card = document.createElement('div');
+            card.className = 'card';
+            card.onclick = function() { selectGame(game.name); };
+
+            var img = document.createElement('img');
+            img.src = game.img;
+            img.alt = game.name;
+            card.appendChild(img);
+
+            var h2 = document.createElement('h2');
+            h2.textContent = game.name;
+            card.appendChild(h2);
+
+            var p = document.createElement('p');
+            p.textContent = game.description;
+            card.appendChild(p);
+
+            var button = document.createElement('button');
+            button.textContent = 'Select';
+            card.appendChild(button);
+
+            gameContainer.appendChild(card);
+        });
+
+        function selectGame(gameName) {
+            var game = games.find(function(g) { return g.name === gameName; });
+            window.location.href = game.url;
+        }
+    </script>
+</body>
+</html>
