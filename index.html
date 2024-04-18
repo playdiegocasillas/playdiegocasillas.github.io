@@ -22,10 +22,9 @@
 
     <script>
         var games = [
-            { name: 'Subway Surfers', img: './Images/subway.jpg', url: 'https://play.diegocasillas.org/subway-surfers' },
-            { name: 'Run 3', img: './Images/run3.jpg', url: 'https://play.diegocasillas.org/run3' },
-            { name: '2048', img: './Images/2048.jpg', url: 'https://play.diegocasillas.org/2048 },
-            { name: 'Retro Bowl', img '', URL: 'https://play.diegocasillas.org/retro-bowl' }
+            { name: 'Subway Surfers', img: './Images/subway.jpg', url: 'https://play.diegocasillas.org/subway-surfers', description: 'Some description about Game 1.' },
+            { name: 'Run 3', img: './Images/run3.jpg', url: 'https://play.diegocasillas.org/run3',description: 'Some description about Game 2.' },
+            { name: '2048', img: './Images/2048.jpg', url: 'https://play.diegocasillas.org/2048', description: 'Some description about Game 1.' }
             // Add more games as needed
         ];
 
@@ -44,6 +43,10 @@
             var h2 = document.createElement('h2');
             h2.textContent = game.name;
             card.appendChild(h2);
+
+            var p = document.createElement('p');
+            p.textContent = game.description;
+            card.appendChild(p);
 
             var button = document.createElement('button');
             button.textContent = 'Select';
